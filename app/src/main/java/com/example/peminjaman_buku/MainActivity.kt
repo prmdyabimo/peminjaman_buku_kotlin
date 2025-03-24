@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         borrowButton.setOnClickListener {
             val position = listView.checkedItemPosition
-            if (position != ListView.INVALID_POSITION) {
+            if (position != ListView.INVALID_POSITION && position < bookList.size) {
                 val book = bookList.removeAt(position)
                 borrowedBooks.add(book)
                 adapter.notifyDataSetChanged()
